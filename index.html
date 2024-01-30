@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,700;1,300;1,400;1,500&family=Saira+Condensed:wght@700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.1.0/css/flag-icons.min.css" integrity="sha512-bZBu2H0+FGFz/stDN/L0k8J0G8qVsAL0ht1qg5kTwtAheiXwiRKyCq1frwfbSFSJN3jooR5kauE0YjtPzhZtJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+<!-- or -->
+<link rel="stylesheet"
+href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- <link rel="stylesheet" href="bootstrap-icons-1.10.3/bootstrap-icons.css">
+    <link rel="stylesheet" href="dropdown/bootstrap-icons.css"> -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            list-style: none;
+            text-decoration: none;
+            font-family: sans-serif;
+        }
+        /* body{
+            background-color: rgb(241, 241, 241);
+        } */
+        header{
+            position: fixed;
+            width: 100%;
+            top: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5%;
+            z-index: 1000;
+        }
+        header ul{
+            display: flex;
+            justify-content: space-between; 
+        }
+        header.black ul{
+            background-color: #ffff;
+        }
+        header ul li a{
+            text-decoration: none;
+            color: #030724;
+            text-transform: capitalize;
+            padding: 10px 20px;
+            font-weight: 400;
+            transition: all .420s ease;
+        }
+        header ul li a:hover{
+            color: rgb(230, 63, 118);
+            
+        }
+        .logo{
+            
+            height: auto;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-icon{
+            display: flex;
+            align-items: center;
+        }
+        .nav-icon i{
+            margin-right: 20px;
+            color: #030724;
+            font-size: 25px;
+            font-weight: 400;
+            transition: all .42s ease;
+        }
+        .nav-icon i:hover{
+            color: rgb(233, 35, 101);
+          
+            transform: scale(1.1);
+        }
+        #menu-icon{
+            font-size: 35px;
+            color: #030724;
+            z-index: 10001;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        body{
+             background:url(images/wing-airplane-with-city-background.jpg) ;
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        section{
+            padding: 15% 20px;
+        }
+        .main-home{
+            width: 100%;
+            height: 100vh;
+           
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            align-items: center;
+        }
+        .main-text h5{
+            color: rgb(223, 40, 101);
+            font-size: 16px;
+            text-transform: capitalize;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+        .main-text h1{
+            counter-reset: #000;
+            font-size: 65px;
+            text-transform: capitalize;
+            line-height: 1.1;
+            font-weight: 600;
+            margin: 6px 0 10px;
+            font-family: sans-serif;
+        }
+        .main-text p{
+            color: gray;
+            font-size:18px ;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .main-btn{
+            display: inline-block;
+            text-transform: capitalize;
+            border: 2px solid #313131;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 12px 25px;
+            transition: all .42s ease;
+        }
+        .main-btn:hover{
+            background-color: #000;
+            color: #fff;
+            font-size: 20px;
+        }
+        .main-btn i{
+            vertical-align: middle;
+        }
+        .down-arrow{
+            position: absolute;
+            top: 85%;
+            right: 11%;
+        }
+        .down i{
+            font-size: 30px;
+            color: #030724;
+            border: 2px solid #030724;
+            border-radius: 50px;
+            padding: 12px 12px;
+        }
+        .down i:hover{
+            background-color: rgba(128, 128, 128, 0.438);
+        }
+
+        /* countries promo */
+        .promo-countreis{
+            background-color: rgb(238, 238, 238);
+        }
+        .center-text h2{
+            color: #111;
+            font-size: 30px;
+            text-transform: capitalize;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .center-text span{
+            color: #ee1c47;
+        }
+        .countries{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+            gap: 2rem;
+        }
+        .row{
+            position: relative;
+            transition: all .40s;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .row img{
+            width: 100%;
+            height: auto;
+            transition: all .40s;
+        }
+        .row img:hover{
+            transform: scale(0.9);
+        }
+        .countries-text h5{
+            position: absolute;
+            top: 13px;
+            left: 13px;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            background-color: #27b737;
+            padding: 3px 10px ;
+            border-radius: 2px;
+        }
+        .heart-icon{
+            position: absolute;
+            right: 0;
+            font-size: 20px;
+        }
+        .heart-icon:hover{
+            color: #ee1c47;
+        }
+        .price del{
+            text-decoration: line-through;
+            color: red;
+        }
+        .price strong{
+            font-size: 18px;
+            color:#27b737;
+        }
+        .countries a{
+            display: inline-block;
+            text-transform: capitalize;
+            border: 2px solid #313131;
+            border-radius: 10px;
+            padding: 10px;
+            color: #000;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 12px 25px;
+            transition: all .42s ease;
+            text-align: center;
+            align-items: center;
+        }
+        .countries a:hover{
+            cursor: pointer;
+            background-color: #ee1c47;
+            color: #fff;
+            font-size: 19px;
+        }
+        /* contact info */
+        
+        .contact-info{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,  minmax(260px, auto));
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            padding-top: 30px;
+            border-radius: 20px;
+            margin: 0 0;
+        }
+        .center-text p:hover{
+            color: #ee1c47;
+        }
+        .fourth-info input,textarea{
+            border-radius: 10px;
+            padding: 2px;
+            background-color: gainsboro;
+        }
+        .social-icon img{
+            margin-right: 20px;
+            color: #030724;
+            font-size: 25px;
+            font-weight: 400;
+            transition: all .42s ease;   
+        }
+        .social-icon img:hover{
+            color: #ee1c47;
+            transform: scale(1.3);
+        }
+        @media screen and (max-width:750px){
+            body{
+                width:fit;
+                height: 100vh;
+            }
+            .main-home{
+                height: 100vh;
+            }
+            /* header{
+                flex-direction: column;
+                height: 0vh;
+            } */
+            header ul{
+                display: none;
+            }
+            header .nav-icon{
+               display: flex;
+               justify-content: space-between;
+            }
+            .main-home{
+                flex-direction: column;
+                justify-content: flex-start;
+                margin-top: 10%;
+            }
+            .down-arrow{
+                flex-direction: column;
+               position: relative;
+              top: 20%;
+              left: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <a href="" class="logo"><img src="" alt="" width="40%"></a>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Destinations</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+        <div class="nav-icon">
+            <a href=""><i class="bx bx-search"></i></a>
+            <a href=""><i class="bx bx-home"></i></a>
+            <a href=""><i class="bx bx-message-dots"></i></a>
+        </div>
+
+        <div class="bx bx-menu" id="menu-icon">
+        </div>
+    </header>
+
+    <section class="main-home">
+         <div class="main-text">
+            <h5>It's Time to visit ...</h5>
+            <h1>THE WIDE <br> WORLD</h1>
+            <p>with AMALVIAJES</p>
+            <a href="" class="main-btn">let's GO <i class="bx bx-right-arrow-alt"></i></a>
+         </div>
+         <div class="down-arrow">
+            <a href="#trending" class="down"><i class="bx bx-down-arrow-alt"></i></a>
+         </div>
+    </section>
+
+<!-- countries promo -->
+    <section class="promo-countreis" id="trending">
+        <div class="center-text">
+            <h2>Our spacial <span>Offers </span>for this season</h2>
+        </div>
+        <div class="countries">
+            <div class="row">
+                <img src="images/spain.jpg" alt="" >
+                <div class="countries-text">
+                    <h5>summary sold</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class="bx bx-heart"></i>
+                </div>
+                <div class="price">
+                    <h4>SPAIN</h4>
+                   <del>2080$</del><br>
+                    <strong>1800$</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="images/victor-emmanuel-ii-monument-rome-sunset-italy.jpg" alt="" >
+                <div class="countries-text">
+                    <h5>summary sold</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class="bx bx-heart"></i>
+                </div>
+                <div class="price">
+                    <h4>ITALY</h4>
+                   <del>2200$</del><br>
+                    <strong>2000$</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="images/german.png" alt="" >
+                <div class="countries-text">
+                    <h5>summary sold</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class="bx bx-heart"></i>
+                </div>
+                <div class="price">
+                    <h4>GERMANY</h4>
+                   <del>2450$</del><br>
+                    <strong>2000$</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="images/beautiful-girl-standing-viewpoint-koh-nangyuan-island-near-koh-tao-island-surat-thani-thailand.jpg" alt="" >
+                <div class="countries-text">
+                    <h5>summry sold</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class="bx bx-heart"></i>
+                </div>
+                <div class="price">
+                    <h4>THIALAND</h4>
+                   <del>2050$</del><br>
+                   
+                    <strong>1800$</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="images/beaubelguim.png" alt="" >
+                <div class="countries-text">
+                    <h5>summary sold</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class="bx bx-heart"></i>
+                </div>
+                <div class="price">
+                    <h4>BELGUIM</h4>
+                   <del>2450$</del><br>
+                    <strong>2000$</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="images/norway.png" alt="" >
+                <div class="countries-text">
+                    <h5>summary sold</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class="bx bx-heart"></i>
+                </div>
+                <div class="price">
+                    <h4>NORWAY</h4>
+                   <del>2550$</del><br>
+                    <strong>2100$</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="images/holand.jpg" alt="" >
+                <div class="countries-text">
+                    <h5>summary sold</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class="bx bx-heart"></i>
+                </div>
+                <div class="price">
+                    <h4>NETHERLAND</h4>
+                   <del>2450$</del><br>
+                    <strong>2000$</strong>
+                </div>
+            </div>
+
+            <div class="row">
+                <img src="images/korea.png" alt="" >
+                <div class="countries-text">
+                    <h5>summary sold</h5>
+                </div>
+                <div class="heart-icon">
+                    <i class="bx bx-heart"></i>
+                </div>
+                <div class="price">
+                    <h4>KOREA</h4>
+                   <del>2450$</del><br>
+                    <strong>1750$</strong>
+                </div>
+            </div>
+
+            <a href="">See All Our Destinations <i class="bx bx-location-plus"></i></a>
+        </div>
+    </section>
+
+    <!-- contact-section -->
+    <div class="foot">
+  
+        <div class="contact-info">
+            <div class="first-info">
+                <img src="images/1706226317444_imgbg.net.png" alt="" width="50%">
+                <p>3245 Granada street longveiw ,  <br>
+                TX united kingdom 765668</p><br>
+                <p>amaldrbali01@gmail.com</p>
+                <br>
+                <br>
+
+                <div class="social-icon">
+                    <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABD0lEQVRIS+2VYQ3CQAyFmQNwAA5AAeAAHOAAHBAUIIHgAAfgAByAA3AA/ZYrOcpy3bLt35o0t93avutre8t6LUvWcvxeB+AybCkai8dCdCraj1QDsYe8CtZH2N/JynMuMQDBzyGoezLHYCLfbxbgIBurupGD/0nWpQXg9LOGAKBoZAHusjFMAHCivWOj7tRoYAGeDv9ar00A8pLN7eMivx2P2JZuIptUzWoDbAOAtq493x9AGYoIxpwQPFWvLztx2h7APNDCvHhS2EVX8Srj7AXnO0PGsP0UmaLRIU1I4aDBKbPQhEDnxWbAOxStRQFD9cJLgTJUqnB/FCWDXKr+cOKW1Bs1mXFVgMr0dQAuZR9BcygZ+5oPugAAAABJRU5ErkJggg=="/></a>
+                    <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABzklEQVRIS82V0VHDMBBEkw6gA9MBqQBTAaGD0EGogFABUAGmAqACTAXQAaYCKIF9njuNrEg2fHiGm9mxI51ub1eSs1zMHMuZ6y/+BUEtleBMqEzxt56t8Cw8jbkwpuBAC++FtUDBd6Gz92MjpTbjF/bc4yoRUOBRgORaaKxwWmCrgSvLOzVVg5wcAUXfLIvOsGIsyH8RaGqVKskRuC3nVpwCBDaVIm7qKE5KCeiC7rFlZ9L5TYHDCSUbzdMcqhvPTQkoiqd00Ql4fGPJg4UFsg+Ns+mo7yMlYGMrAS8J74p3V1Wo3Q/TDGuC2pSADlqBbgms+RLwf8oi8ncCDpDb71mOYCAxUtFExCUVbmmRgONGcKbjYPM2wq1wKVQCYw8CxB6M1UI4SakCPKQL3+SYxOcY64yEdwjc0slNpjOSShuKCjwmj8Bnvy/MoYDf4fuUu2h+i/0kxSr8HRs4AP59ghB7IcTecClTAhahANl4/ZuguB9vVxPWpQR0Rid4ShcnwqfA5qZBM2vBP3asCdZ4cukm+zwk/i1icWcTfFIAc62pxa69yN1kFr1aNxSkEH82tb1DCih4Z8/gecqQ24Nicq7DqbHcKZpa86f52Ql+AH9UZxk3YsOWAAAAAElFTkSuQmCC"/></a>
+                    <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAy0lEQVRIS2NkoDFgpLH5DIPOAgGgj+uB2AGIFYD4AxBvAOJCXCFBig9Aht8HYhCNDEAWBFLDgn6gIQVYDKKaBeuBhgdALTgAdTUoiPACUoIIFDygcAeBCfjCHdlGci0ARSrIEoKAkAUOSK4GpR6YDxYA2Qehpl8A0iCMFRCyYD5QVwIBZ+INLmpYAEqioJRElg9AyTIeqtMAyYQHQDYsBYHi4wC5FiDrQ05FVIvkUQtIKq5H44BgsULzICLoAmwKCBUVZBmKrInmFgAAW38qGVU0eQAAAAAASUVORK5CYII="/></a>
+                    <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAB0ElEQVRIS8WVvU0EMRCF7yoAQrIjIoUG0FEBUAFHBUBMwFEBUAFLBVABrEQBQAQZ2wF0AO9beVa+kb0/wYqRnuzzjufNm7F908nINh05/uTfCHak7FA4EGaRyvVo/hPmpcZKuA3jSlFSCs7kcRm82AgsmK8ohCRAQtiJUMROngDn1xD0KJWRZwi/IbgW5sKu8GZ+nmCpD6fCfuyUCWrLT5p8CBfCt/AokFxtnuBBa6ggC29kB7AyYFvjp/Ai7AlfAmXbyBHgwGZqaQYh8ml6bJQBpZsCCrA7YSE0iXsFJjEmQBXBb4R7gYbzG1KSgcTMCFBQH4wUQaH187CDQBAQ3NYsGKcNkvjkdBL8umAWZEvrVZQpU2qN4ithGb4NJiBDSNoIYnWdBL4HVqI4S18ijiRHExtMwCYuHheJHhQhkDWZstFku+m9TlGpDc1F0Xwm0Gh7DkwBx9Tf9k6CZ22ieamLtghkaxrfQ1n8G8U9Yq3Z748pTSUQDsgfYiiFoBCae5R67OLb3JcE1ZSH3tCT0jJLPdcowBnjdCDZl8L2E5jekD1G9isXMvePxqZjYR4CWMDUSLMrgWfEjmvjlyPwgcg0Zzl1tX9fgjYFrd9GJ/gDPO9xGaPlhqIAAAAASUVORK5CYII="/></a>
+                </div>
+            </div>
+            <div class="second-info">
+                <h4>Support</h4>
+                <p>travlling</p>
+                <p>for a person</p>
+                <p>Couples</p>
+                <p>Familly</p>
+                <p>Friends</p>
+            </div>
+            <div class="third-info">
+                <h4>Company</h4>
+                <p>about us</p>
+                <p>blog</p>
+                <p>affiftlast</p>
+                <p>contact us</p>
+            </div>
+            <div class="fourth-info">
+                <h4>leave a meesage</h4>
+                <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email address</label> <br>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> <br>
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">message</label> <br>
+                      <textarea name="" id="" cols="20" rows="5" placeholder="Message"></textarea> <br>
+                    </div>
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1"> <br>
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                  </form>
+            </div>
+        </div>
+   </div>
+    <script  src="https://code.jquery.com/jquery-3.7.1.js">
+    </script>
+    <script src="java.js">
+        // $(window).scroll(function(){
+        //     if($(window).scrollTop()){
+        //         $("header").removeClass("black");
+        //     }
+        //     else{
+        //         $("header"),removeClass("black");
+        //     }
+        // })
+    </script>
+</body>
+</html>
